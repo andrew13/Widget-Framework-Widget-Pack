@@ -5,11 +5,18 @@ class WidgetFrameworkWidgetPack_WidgetRenderer_Twitter extends WidgetFramework_W
     protected function _getConfiguration()
     {
         return array(
-            'name' => 'Twitter',
+            'name' => 'Twitter Feed',
             'options' => array(
-                'template' => XenForo_Input::STRING,
+                'twitter' => XenForo_Input::STRING,
+                'height' => XenForo_Input::UINT,
+                'scroll' => XenForo_Input::UINT,
+                'hashtags' => XenForo_Input::UINT,
+                'avatars' => XenForo_Input::UINT,
+                'toptweets' => XenForo_Input::UINT,
+                'timestamps' => XenForo_Input::UINT,
             ),
-            'useWrapper' => false,
+            'useCache' => true,
+            'cacheSeconds' => 900, // cache for 5 minutes
         );
     }
 

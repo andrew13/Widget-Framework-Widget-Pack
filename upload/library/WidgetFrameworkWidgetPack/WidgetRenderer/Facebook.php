@@ -5,14 +5,12 @@ class WidgetFrameworkWidgetPack_WidgetRenderer_Facebook extends WidgetFramework_
     protected function _getConfiguration()
     {
         return array(
-            'name' => 'Facebook',
+            'name' => 'Facebook Group',
             'options' => array(
                 'facebookId' => XenForo_Input::STRING,
             ),
-            'useWrapper' => false,
             'useCache' => true,
-            'useUserCache' => true,
-            'cacheSeconds' => 900, // cache for 15 minutes
+            'cacheSeconds' => 900, // cache for 5 minutes
         );
     }
 
