@@ -4,7 +4,7 @@
   <admin_permissions/>
   <admin_style_properties/>
   <admin_templates>
-    <template title="wfwp_sidebar_facebook_options"><![CDATA[<xen:textboxunit name="{$namePrefix}facebook" label="Facebook Id" value="{$options.facebookId}">
+    <template title="wfwp_sidebar_facebook_options"><![CDATA[<xen:textboxunit name="{$namePrefix}facebookId" label="Facebook Id" value="{$options.facebookId}">
 	<xen:explain>{xen:phrase wfwp_facebook_id_explain}</xen:explain>
 </xen:textboxunit>]]></template>
     <template title="wfwp_sidebar_twitter_options"><![CDATA[<xen:textboxunit name="{$namePrefix}twitter" label="Twitter Search Query" value="{$options.twitter}">
@@ -43,20 +43,21 @@
   <phrases>
     <phrase title="wfwp_facebook_group" version_id="10000" version_string="1.0.0"><![CDATA[Facebook Group]]></phrase>
     <phrase title="wfwp_facebook_id_explain" version_id="10000" version_string="1.0.0"><![CDATA[The profile ID of your Facebook fan page. This is NOT your fan page "short link".]]></phrase>
+    <phrase title="wfwp_show_avatars" version_id="10000" version_string="1.0.0"><![CDATA[Show Avatars]]></phrase>
+    <phrase title="wfwp_show_hashtags" version_id="10000" version_string="1.0.0"><![CDATA[Show hashtags]]></phrase>
+    <phrase title="wfwp_show_scroll_bar" version_id="10000" version_string="1.0.0"><![CDATA[Show Scroll Bar]]></phrase>
+    <phrase title="wfwp_show_timestamps" version_id="10000" version_string="1.0.0"><![CDATA[Show Timestamps]]></phrase>
+    <phrase title="wfwp_show_top_tweets" version_id="10000" version_string="1.0.0"><![CDATA[Show Top Tweets]]></phrase>
+    <phrase title="wfwp_twitter_explain" version_id="10000" version_string="1.0.0"><![CDATA[Twitter search query.]]></phrase>
     <phrase title="wfwp_twitter_feed" version_id="10000" version_string="1.0.0"><![CDATA[Twitter Feed]]></phrase>
     <phrase title="wfwp_twitter_join" version_id="10000" version_string="1.0.0"><![CDATA[Join the conversation]]></phrase>
   </phrases>
   <route_prefixes/>
   <style_properties/>
   <templates>
-    <template title="wfwp_sidebar_facebook" version_id="10000" version_string="1.0.0"><![CDATA[<div class="section">
-	<div class="secondaryContent" id="facebook">
-		<h3>{xen:phrase wfwp_faceBook_group}</h3>
-		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-		<fb:fan width="240" height="216" connections="8" stream="false" logobar="false" css="{$xenOptions.boardUrl}/styles/wfwp/fb-{xen:property fbColorScheme}-.css?1" profile_id="{$facebookId}"></fb:fan>
-	</div>
-</div>]]></template>
+    <template title="wfwp_sidebar_facebook" version_id="10000" version_string="1.0.0"><![CDATA[<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<fb:fan width="240" height="216" connections="8" stream="false" logobar="false" css="{$xenOptions.boardUrl}/styles/wfwp/fb-{xen:property fbColorScheme}-.css?1" profile_id="{$facebookId}"></fb:fan>]]></template>
     <template title="wfwp_sidebar_search" version_id="10000" version_string="1.0.0"><![CDATA[
 <xen:edithint template="search_bar.css" />
 <div class="section sidebarSearch">
@@ -148,10 +149,6 @@
 </div>
 ]]></template>
     <template title="wfwp_sidebar_twitter" version_id="10000" version_string="1.0.0"><![CDATA[<xen:require css="wfwp_sidebar_twitter.css" />
-
-<div class="section">
-	<div class="secondaryContent" id="twitter">
-		<h3>{xen:phrase wfwp_twitter_feed}</h3>
 		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 		<script>
 		new TWTR.Widget({
@@ -187,9 +184,7 @@
 		<div class="twtr-link">
 			<span><a href="http://twitter.com/#search?q={$search}" target="_blank">{xen:phrase wfwp_twitter_join}</a></span>
 			<a href="http://twitter.com" target="_blank"><img src="http://widgets.twimg.com/i/widget-logo.png" alt="" /></a>
-		</div>
-	</div>
-</div>]]></template>
+		</div>]]></template>
   </templates>
   <bb_code_media_sites/>
   <template_modifications/>
