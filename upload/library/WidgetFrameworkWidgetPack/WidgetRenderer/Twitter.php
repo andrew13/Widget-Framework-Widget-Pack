@@ -16,7 +16,7 @@ class WidgetFrameworkWidgetPack_WidgetRenderer_Twitter extends WidgetFramework_W
                 'timestamps' => XenForo_Input::UINT,
             ),
             'useCache' => true,
-            'cacheSeconds' => 900, // cache for 5 minutes
+            'cacheSeconds' => 300, // cache for 5 minutes
         );
     }
 

@@ -10,7 +10,7 @@ class WidgetFrameworkWidgetPack_WidgetRenderer_Facebook extends WidgetFramework_
                 'facebookId' => XenForo_Input::STRING,
             ),
             'useCache' => true,
-            'cacheSeconds' => 900, // cache for 5 minutes
+            'cacheSeconds' => 300, // cache for 5 minutes
         );
     }
 
@@ -28,6 +28,7 @@ class WidgetFrameworkWidgetPack_WidgetRenderer_Facebook extends WidgetFramework_
     {
 
         $renderTemplateObject->setParam('facebookId', $widget['options']['facebookId']);
+        $renderTemplateObject->setParam('boardUrl', $params['xenOptions']['boardUrl']);
 
         return $renderTemplateObject->render();
     }
